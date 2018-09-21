@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>colorPop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+  <!--Materialize-->
+  <!--My JS-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="./home.js"></script>
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!--Animate CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+</head>
+
+<body>
+  <!--Nav Bar______________________________________________________________-->
+  <nav class="nav-container">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">colorPop</a>
+      <header>
+        <!-- <a href="#Main" class="logo-brand">
+              <img src="images/logo_transparent.png" class="logo-brand"> </a> -->
+      </header>
+    </div>
+  </nav>
+
+
+  <!--Landing hero wrap______________________________________________________-->
+  <div class="parallax-container center">
+    <!--"valign wrapper" after center maybe?-->
+    <div class="container">
+
+      <div class="row">
+        <div class="col s12 slogan">
+          <h2 class="animated fadeInDown delay-2s">Find colors that speak to you,
+            <br> and your home.
+          </h2>
+        </div>
+        <div class="start-button">
+          <a href="#section1" id="button1" class="btn-large waves-effect waves-light">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="parallax">
+      <img src="../media/image3.jpeg">
+    </div>
+
+  </div>
+  <!--How To Section____________________________________________________________________-->
+  <div class="container">
+    <div class="row">
+      <div class="col m4 s12">
+        <div class="icon-block">
+          <h2 class="center">
+            <img src="../media/icon1.png" class=fit-icons>
+          </h2>
+
+          </h2>
+          <h5 class="center">Upload Your Photo</h5>
+          <p class="descriptions">
+            Upload a photo of your choice and let us do the work! Art work, accent pieces, color palettes - choose a piece to center
+            your home decor around and we will do the rest.
+          </p>
+        </div>
+
+      </div>
+      <div class="col m4 s12">
+        <div class="icon-block">
+          <h2 class="center">
+            <img src="../media/icon2.png" class=fit-icons>
+          </h2>
+          </h2>
+          <h5 class="center">Let us work our magic</h5>
+          <p class="descriptions">
+            We analyze every photo for content and color scheme. If you upload a Renoir painting, we will give you products from Etsy
+            that have pastel colors, impressionist themes, and timeless accents.
+          </p>
+        </div>
+      </div>
+      <div class="col m4 s12">
+        <div class="icon-block">
+          <h2 class="center">
+            <img src="../media/icon3.png" class=fit-icons>
+          </h2>
+          <h5 class="center">Choose Pieces You Love</h5>
+          <p class="descriptions">
+            We have partnered with Etsy to show you up to 9 products that would be a perfect fit for your home. Choose pieces you love
+            and be directed to the Etsy site.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax-container center">
+    <div class="parallax">
+      <img src="../media/Image2.jpg">
+    </div>
+
+    <!--Upload Image Section________________________________________________________-->
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="section1">
+    <br>
+    <div class="row container center">
+      <div class="row center">
+        <img id="imgPreview" class="responsive-img center">
+      </div>
+    </div>
+
+
+
+  <!-- </div>
+  <div class="row-form">
+    <form action="#">
+      <div class="file-field input-field">
+        <div class="btn" id="button-file-submit">
+          <span>Upload your photo</span>
+          <input id="imgInp" type="file">
+        </div>
+        <div class="clear-button">
+          <a onclick="document.getElementById('imgPreview').src = ''" id="clear-button" class="btn-large waves-effect waves-light">Clear Image</a>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate">
+        </div>
+      </div>
+  </div>
+  </form>
+
+  </div>
+  </div>
+  </div> -->
+
+  <form action="#">
+      <div class="file-field input-field">
+        <div class="btn" id="button-file-submit">
+          <span>Upload</span>
+          <input id="imgInp" type="file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+    </form>
+    
+  </div>
+</div>    
+
+  <!--Analyze button-->
+ 
+  <div class="start-button center-align">
+    <a href="#section2" id="button2" class="btn-large waves-effect waves-light">Analyze</a>
+  </div>
+  </div>
+  <br>
+  <br>
+
+
+
+  <div class="parallax-container center">
+    <div class="parallax">
+      <img src="../media/Image1.jpg">
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Results display__________________________________________________________________-->
+  <div class="container center-align">
+    <div class="section" id="section2">
+      <div class="row">
+        <div class="col s12">
+
+          <!--Results Div-->
+          <br>
+          <br>
+          <div class="row">
+            <div class="col s12 m6 l3">
+              <img src=" " id="img1" width="220" height="200">
+              <p id="name1"></p>
+              <p id="price1"></p>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <img src=" " id="img2" width="220" height="200">
+              <p id="name2"></p>
+              <p id="price2"></p>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <img src=" " id="img3" width="220" height="200">
+              <p id="name3"></p>
+              <p id="price3"></p>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <img src=" " id="img4" width="220" height="200">
+              <p id="name4"></p>
+              <p id="price4"></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12 m6 l3">
+              <img src=" " id="img5" width="220" height="200">
+              <p id="name5"></p>
+              <p id="price5"></p>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <img src=" " id="img6"width="220" height="200">
+              <p id="name6"></p>
+              <p id="price6"></p>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <img src=" " id="img7" width="220" height="200">
+              <p id="name7"></p>
+              <p id="price7"></p>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <img src=" " id="img8" width="220" height="200">
+              <p id="name8"></p>
+              <p id="price8"></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12 m6 l3">
+              <img src=" " id="img9" width="220" height="200">
+              <p id="name9"></p>
+              <p id="price9"></p>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <img src=" " id="img10" width="220" height="200">
+              <p id="name10"></p>
+              <p id="price10"></p>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <img src=" " id="img11" width="220" height="200">
+              <p id="name11"></p>
+              <p id="price11"></p>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <img src=" " id="img12" width="220" height="200">
+              <p id="name12"></p>
+              <p id="price12"></p>
+            </div>
+          </div>
+
+
+
+
+        </div>
+        <div class="start-button left-align">
+          <a href="#section1" onclick="document.getElementById('imgPreview').src = ''" id="button3" class="btn-large waves-effect waves-light">Upload Another Image</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <div class="footer-container">
+    <footer class="page-footer red lighten-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="footer-header">colorPop</h5>
+            <p class="text-lighten-4">colorPop has partnered with Imagga and Etsy for a total design experience. </p>
+            <p>
+              <img src="../media/instagram2.png" class=logo3-icons>
+              <img src="../media/pinterest.png" class=logo3-icons>
+              <img src="../media/twitter.png" class=logo3-icons>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Partners</h5>
+            <ul>
+              <li>
+                <a class="grey-text text-lighten-3" href="https://imagga.com/">
+                  <img src="../media/imaggalogo.png" class=logo1-icons>
+                </a>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="https://www.etsy.com/">
+                  <img src="../media/etsylogo.png" class=logo-icons>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2018 Copyright
+
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!--JavaScript-->
+
+</body>
+
+</html>

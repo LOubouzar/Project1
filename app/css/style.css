@@ -1,0 +1,150 @@
+/*Parallax Handling__________________*/
+.parallax-container {
+    height: 400px;
+}
+
+/*Nav Bar_____________________________*/
+.nav-container{
+     background-color: #ffcdd2;
+     font-size: 25px;
+} 
+
+.brand-logo{
+    font-family: 'Pacifico', cursive;
+    
+}
+
+/*SLOGAN_____________________________*/
+.slogan {
+    font-size: 55px;
+    font-weight: bold;
+    color: white;
+    text-shadow:
+		-2px -2px 0 hotpink,
+		2px -2px 0 hotpink,
+		-2px 2px 0 hotpink,
+		2px 2px 0 hotpink;
+    font-weight: 100;
+    line-height: 1em;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5%;
+    font-family: 'Roboto', sans-serif;
+   
+}
+
+
+
+
+/*How to Div_________________________*/
+.fit-icons{
+    width: 75px;
+    height: 70px;   
+}
+
+/*Uploading file______________________*/
+/* #button-file-submit{
+    color: black;
+    background-color: hotpink;
+    margin-left: 36%;
+    text-align: center;
+} */
+
+#button-file-submit{
+    color: black;
+    background-color: hotpink;
+    margin-left: 32%;
+    text-align: center;
+}
+
+
+#clear-button{
+    background-color: white;
+    color: hotpink;
+    Border: 2px solid hotpink;
+    margin-left: 2%;
+}
+
+/* .file-path-wrapper{
+    width: 0%;
+} */
+
+.file-path-wrapper{
+    width: 20%;
+} 
+
+.row.container{
+    border: 2px dotted lightslategrey;
+    width: 36%;
+    /* max-height: 70%; */
+    height: 300px;
+    border-radius:10px;
+    
+}
+
+.responsive-img{
+    padding-top: 30px;
+    max-width: 250px;
+    max-height: 250px;   
+}
+
+
+
+
+/*Results Section______________________*/
+
+p {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+
+/*Footer______________________________*/
+.page-footer{
+    background-color: rgb(255, 215, 215);
+}
+
+.logo1-icons{
+    width: 80px;
+    height: 50px;   
+}
+
+
+.logo-icons{
+    width: 70px;
+    height: 70px;   
+}
+
+.logo3-icons{
+    width: 40px;
+    height: 40px;   
+}
+
+.footer-header{
+    color: white;
+    font-family: 'Pacifico', cursive;
+}
+
+
+
+/*Buttons________________________________*/
+#button1{
+    color: black;
+    background-color: aquamarine;
+}
+
+#button2{
+    color: black;
+    background-color: aquamarine;
+}
+
+#button3{
+    color: black;
+    background-color: aquamarine;
+    margin-left: 1%;
+}
+
