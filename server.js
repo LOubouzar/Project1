@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
 //Required Routes
-require("./routing/api-routes")(app);
-require("./routing/html-routes")(app);
+require("./app/routing/api-routes")(app);
+require("./app/routing/html-routes")(app);
 
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
