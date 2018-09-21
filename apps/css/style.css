@@ -1,0 +1,28 @@
+.nav-wrapper {
+  background-color:#f48fb1;
+}
+
+.brand-logo{
+  margin-left:100px;
+}
+
+.parallax-container {
+  height: 400px;
+  color:orange;
+  text-align: center;
+}
+
+.header {
+  color: white;
+}
+
+
+.page-footer {
+  background-color:#f48fb1;
+}
+
+.row.container {
+  width: 40%;
+ 
+}
+
