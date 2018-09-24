@@ -19,99 +19,101 @@ var app = express();
 // require("./app/routing/html-routes")(app);
 
 
-
-imager();
-
 require("dotenv").config();
 
 var imaggaapiKey = process.env.IMAGGA_ID
 var imaggaapiSecret = process.env.IMAGGA_SECRET
 
-//GET request in server for API 
-function scraper(colorsName0) {
-    var results = [];
-    request("https://www.etsy.com/search/art-and-collectibles?q=" + colorsName0 + "&explicit=1", function (err, res, body) {
-
-        console.log("Etsy Scraper Variable: " + colorsName0);
-        if (err) console.error(err);
-        var $ = cheerio.load(body);
-
-        var resultsURL = [];
-        var resultsPrice = [];
-        var resultsName = [];
-        var resultsImage = [];
-        
-
-        $(".currency-value").each(function (i, e) {
-            var price = $(e).text();
-            resultsPrice.push(price);
-        });
-
-        $("p.text-body").each(function (i, e) {
-            var name = $(e).text();
-            resultsName.push(name);
-        });
-
-        $(".width-full.display-block.position-absolute").each(function (i, e) {
-            var image = $(e).attr();
-            resultsImage.push(image);
-        });
-
-        $(".display-inline-block.listing-link").each(function (i, e) {
-            var url = $(e).attr();
-            resultsURL.push(url);
-        });
-
-         results.push({
-           price: resultsPrice,
-           image: resultsImage,
-           name: resultsName,
-           url: resultsURL,
-         });
-
-        // console.log("name" + resultsName);
-        // console.log(resultsImage);
-        // console.log(resultsURL);
-        // console.log("price" + resultsPrice);
-        console.log(results);
-
-        return results;
-
-    });
-};
-
-//URL image color extractor and console logged to the CLI
 function imager() {
-    var requestImagga = require("request"),
-        imageUploadURL = "https://i.etsystatic.com/15309986/r/il/43c914/1528912866/il_570xN.1528912866_6ht5.jpg";
+    //GET request in server for API 
+    function scraper(colorsName0) {
+        var results = [];
+        request("https://www.etsy.com/search/art-and-collectibles?q=" + colorsName0 + "&explicit=1", function (err, res, body) {
 
-    requestImagga.get("https://api.imagga.com/v1/colors?url=" + encodeURIComponent(imageUploadURL), function (error, response, body) {
-        console.log("Imagga API:" + error)
-        var b = JSON.parse(body);
-        //Console log of the General JSON of the image information API
-        // console.log(b.results[0].info.image_colors[0]);
-        var colorsName0 = b.results[0].info.image_colors[0].closest_palette_color;
+            console.log("Etsy Scraper Variable: " + colorsName0);
+            if (err) console.error(err);
+            var $ = cheerio.load(body);
 
-        console.log("Primary Closest Color Name: ", colorsName0);
+            var resultsURL = [];
+            var resultsPrice = [];
+            var resultsName = [];
+            var resultsImage = [];
 
-        scraper(colorsName0);
 
-    }).auth(imaggaapiKey, imaggaapiSecret, true);
-};
+            $(".currency-value").each(function (i, e) {
+                var price = $(e).text();
+                resultsPrice.push(price);
+            });
 
-var PORT = process.env.PORT || 8080;
+            $("p.text-body").each(function (i, e) {
+                var name = $(e).text();
+                resultsName.push(name);
+            });
 
-app.listen(PORT, function() {
-    console.log("App listening on PORT: " + PORT);
+            $(".width-full.display-block.position-absolute").each(function (i, e) {
+                var image = $(e).attr();
+                resultsImage.push(image);
+            });
 
-    module.exports = function(app) {
-        app.get("*", function(req, res) {
-            res.sendFile(path.join(__dirname, "/../public/home.html"));
-       
+            $(".display-inline-block.listing-link").each(function (i, e) {
+                var url = $(e).attr();
+                resultsURL.push(url);
+            });
+
+            results.push({
+                price: resultsPrice,
+                image: resultsImage,
+                name: resultsName,
+                url: resultsURL,
+            });
+
+            // console.log("name" + resultsName);
+            // console.log(resultsImage);
+            // console.log(resultsURL);
+            // console.log("price" + resultsPrice);
+            console.log(results);
+
+            return results;
+
+        });
+
+
+        //URL image color extractor and console logged to the CLI
+        function imagga() {
+            var requestImagga = require("request"),
+                imageUploadURL = "https://i.etsystatic.com/15309986/r/il/43c914/1528912866/il_570xN.1528912866_6ht5.jpg";
+
+            requestImagga.get("https://api.imagga.com/v1/colors?url=" + encodeURIComponent(imageUploadURL), function (error, response, body) {
+                console.log("Imagga API:" + error)
+                var b = JSON.parse(body);
+                //Console log of the General JSON of the image information API
+                // console.log(b.results[0].info.image_colors[0]);
+                var colorsName0 = b.results[0].info.image_colors[0].closest_palette_color;
+
+                console.log("Primary Closest Color Name: ", colorsName0);
+
+                scraper(colorsName0);
+
+            }).auth(imaggaapiKey, imaggaapiSecret, true);
+        };
+
+        var PORT = process.env.PORT || 8080;
+
+        app.listen(PORT, function () {
+            console.log("App listening on PORT: " + PORT);
+
+            module.exports = function (app) {
+                app.get("*", function (req, res) {
+                    res.sendFile(path.join(__dirname, "/../public/home.html"));
+
+                });
+            };
+
         });
     };
+};
 
-});
+imager();
 
 // file uploader to Imagga API  https://docs.imagga.com/#content
 // var fs = require('fs'),
