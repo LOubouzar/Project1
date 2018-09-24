@@ -9,6 +9,9 @@ var request = require("request");
 var express = require("express");
 var app = express();
 
+//static media serve
+app.use(express.static("app/public"));
+
 //Clarifai Config
 const Clarifai = require("clarifai");
 require("dotenv").config();
@@ -98,7 +101,7 @@ app.listen(PORT, function () {
     console.log("App listening on PORT: " + PORT);
 });
 
-app.get("*", function (req, res) {
+app.get("/", function (req, res) {
     console.log("Get request check")
     res.sendFile(path.join(__dirname, "/./app/public/home.html"));
 });
