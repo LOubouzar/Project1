@@ -17,6 +17,15 @@ $(document).ready(function () {
         //call API
 
     }
+
+    $.ajax({
+      url: "/",
+      data: { value: $("#imgInp").val() },
+      method: "POST",
+      success: (data) => {
+        console.log(data)
+      }
+    });
     
     $("#imgInp").change(function() {
       displayPreview(this);

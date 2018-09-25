@@ -4,12 +4,13 @@ var path = require("path");
 var cheerio = require("cheerio");
 // Makes HTTP request for HTML page
 var request = require("request");
+var bodyParser = require('body-parser');
 
 //Express Configuration
 var express = require("express");
 var app = express();
 
-//static media serve
+//static media content serve to home.html
 app.use(express.static("app/public"));
 
 //Clarifai Config
@@ -18,12 +19,22 @@ require("dotenv").config();
 var apiKey = process.env.apiKey
 var clarifai = new Clarifai.App({ apiKey: apiKey });
 
-// app.use(bodyParser.urlencoded({ extended: true}));
-// app.use(bodyParser.json());
+//Get POST input from file uploader on client page and out puts a stored variable to feed in to the clarifai api as userURL
+app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.json());
+
+app.post("/", (req, res) => {
+	console.log(req.body.value);
+    // outputs input's value
+    res.send("URL received");
+    var userURL = req.body.value;
+    console.log("Inside Post:", userURL);
+});
+console.log("Outside Post:", userURL);
 
 //clarifai API 
 var colorName = "";
-clarifai.models.predict("eeed0b6733a644cea07cf4c60f87ebb7", "https://samples.clarifai.com/metro-north.jpg").then(
+clarifai.models.predict("eeed0b6733a644cea07cf4c60f87ebb7", userURL).then(
     function (response) {
         // console.log(response.outputs[0].data.colors);
         var rawColor = response.outputs[0].data.colors;
@@ -102,11 +113,9 @@ app.listen(PORT, function () {
 });
 
 app.get("/", function (req, res) {
-    console.log("Get request check")
+    console.log("Get request check");
     res.sendFile(path.join(__dirname, "/./app/public/home.html"));
 });
-
-
 
 
 
