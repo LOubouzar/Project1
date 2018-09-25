@@ -148,3 +148,16 @@ p {
     margin-left: 1%;
 }
 
+#btnPreview {
+    color:black;
+    background-color: aquamarine;
+    width: 8.5rem;
+    height: 2.5rem;
+    padding: 4px;
+}
+#btnAnalyze {
+    color: black;
+    background-color: aquamarine;
+    width: 12rem;
+
+}
