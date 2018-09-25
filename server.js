@@ -23,14 +23,16 @@ var clarifai = new Clarifai.App({ apiKey: apiKey });
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
-app.post("/", (req, res) => {
-	console.log(req.body.value);
-    // outputs input's value
-    res.send("URL received");
-    var userURL = req.body.value;
-    console.log("Inside Post:", userURL);
-});
-console.log("Outside Post:", userURL);
+
+
+// app.post("/", (req, res) => {
+// 	console.log(req.body.value);
+//     // outputs input's value
+//     res.send("URL received");
+//     var userURL = req.body.value;
+//     console.log("Inside Post:", userURL);
+// });
+// console.log("Outside Post:", userURL);
 
 //clarifai API 
 var colorName = "";
