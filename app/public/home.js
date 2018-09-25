@@ -31,17 +31,34 @@ $(document).ready(function () {
     //Analyze button
     $("#btnAnalyze").on('click', function(){
       // get the results and display in the image list
-      $.get('/analyze?url=' + $("#url").val()).then(function(response){
+      $.get("/analyze?url=" + $("#url").val()).then(function(response){
         console.log(response);
-        //clear images
+        //clear results
         for (let index = 0; index < 12; index++) {
-          $("#img" + (index + 1)).attr('src', './media/placeholderImage.jpg');          
+          $("#img" + (index + 1)).attr("src", "./media/placeholderImage.jpg");          
         }
         //display the images results
         for (let index = 0; index < response[0].resultsImage.length; index++) {
           const element = response[0].resultsImage[index];
-          $("#img" + (index + 1)).attr('src', element.src);
+          $("#img" + (index + 1)).attr("src", element.src);
         }
+        //display the url results
+        for (let index = 0; index < response[0].resultsURL.length; index++) {
+          const element = response[0].resultsURL[index].href;
+          console.log(element);
+          $("#url" + (index + 1)).attr("href", element);
+        }
+        //display the name results
+        for (let index = 0; index < response[0].resultsName.length; index++) {
+          const element = response[0].resultsName[index];
+          $("#name" + (index + 1)).text(element);
+        }
+        //display the price results
+        for (let index = 0; index < response[0].resultsPrice.length; index++) {
+          const element = response[0].resultsPrice[index];
+          $("#price" + (index + 1)).text("$"+(element));
+        }
+
       });
     });
 });
