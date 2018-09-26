@@ -1,4 +1,4 @@
-# Project1
+# colorPop
 
 This is our second group project that demonstrates knowledge of both frontend and backend development. We split our team into two departments: one team focusing on the user experience and design, and the other team focusing on working with the APIs. We used two APIs for this project: Clarifai, which extracts colors from images and Etsy, which pulls results based on returned colors.
 
